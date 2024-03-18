@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.34301.259
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetaryAccessControlSystem", "PlanetaryAccessControlSystem\PlanetaryAccessControlSystem.csproj", "{1AD830EC-AE4B-4639-A512-9F66132D9300}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureRandom", "SecureRandom\SecureRandom.csproj", "{654A18F2-B87B-42A9-99B6-9C9894BC03FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1AD830EC-AE4B-4639-A512-9F66132D9300}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AD830EC-AE4B-4639-A512-9F66132D9300}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AD830EC-AE4B-4639-A512-9F66132D9300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{654A18F2-B87B-42A9-99B6-9C9894BC03FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{654A18F2-B87B-42A9-99B6-9C9894BC03FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{654A18F2-B87B-42A9-99B6-9C9894BC03FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{654A18F2-B87B-42A9-99B6-9C9894BC03FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
