@@ -7,23 +7,19 @@ using System.Threading.Tasks;
 
 namespace SecureRandom
 {
-    public class RandomGenerator
+    public class Utils
     {
-        readonly RNGCryptoServiceProvider _csp;
-
-        public RandomGenerator()
+        public static class RandomGenerator
         {
-            _csp = new RNGCryptoServiceProvider();
-        }
+            private static readonly RNGCryptoServiceProvider _csp = new RNGCryptoServiceProvider();
 
-        public int Next(int minValue, int maxValue)
-        {
-            if (minValue >= maxValue)
+            public static int Next(int minValue, int maxValue)
             {
-                throw new ArgumentOutOfRangeException("minValue must be lower than maxValue");
-            }
-            else
-            {
+                if (minValue >= maxValue)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(minValue), "minValue must be lower than maxValue");
+                }
+
                 byte[] byteArray = new byte[4];
                 _csp.GetBytes(byteArray);
 
