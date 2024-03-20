@@ -46,16 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmMainSpaceship.cs">
+    <Compile Include="frmEncryptedSender.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMainSpaceship.Designer.cs">
-      <DependentUpon>frmMainSpaceship.cs</DependentUpon>
+    <Compile Include="frmEncryptedSender.Designer.cs">
+      <DependentUpon>frmEncryptedSender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCodeSender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCodeSender.Designer.cs">
+      <DependentUpon>frmCodeSender.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmMainSpaceship.resx">
-      <DependentUpon>frmMainSpaceship.cs</DependentUpon>
+    <EmbeddedResource Include="frmCodeSender.resx">
+      <DependentUpon>frmCodeSender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEncryptedSender.resx">
+      <DependentUpon>frmEncryptedSender.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

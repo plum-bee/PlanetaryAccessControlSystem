@@ -30,13 +30,13 @@ namespace SpaceshipApp
         private void InitializeComponent()
         {
             this.btnNext = new System.Windows.Forms.Button();
-            this.pnlWizardContainer = new System.Windows.Forms.Panel();
+            this.pnlCodeContainer = new System.Windows.Forms.Panel();
             this.btnSend = new System.Windows.Forms.Button();
             this.lblSpaceshipCode = new System.Windows.Forms.Label();
             this.txtSpaceshipCode = new System.Windows.Forms.TextBox();
             this.txtDeliveryCode = new System.Windows.Forms.TextBox();
             this.lblDeliveryCode = new System.Windows.Forms.Label();
-            this.pnlWizardContainer.SuspendLayout();
+            this.pnlCodeContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNext
@@ -49,18 +49,18 @@ namespace SpaceshipApp
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
             // 
-            // pnlWizardContainer
+            // pnlCodeContainer
             // 
-            this.pnlWizardContainer.Controls.Add(this.btnSend);
-            this.pnlWizardContainer.Controls.Add(this.lblSpaceshipCode);
-            this.pnlWizardContainer.Controls.Add(this.txtSpaceshipCode);
-            this.pnlWizardContainer.Controls.Add(this.txtDeliveryCode);
-            this.pnlWizardContainer.Controls.Add(this.lblDeliveryCode);
-            this.pnlWizardContainer.Location = new System.Drawing.Point(16, 15);
-            this.pnlWizardContainer.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlWizardContainer.Name = "pnlWizardContainer";
-            this.pnlWizardContainer.Size = new System.Drawing.Size(1035, 489);
-            this.pnlWizardContainer.TabIndex = 0;
+            this.pnlCodeContainer.Controls.Add(this.btnSend);
+            this.pnlCodeContainer.Controls.Add(this.lblSpaceshipCode);
+            this.pnlCodeContainer.Controls.Add(this.txtSpaceshipCode);
+            this.pnlCodeContainer.Controls.Add(this.txtDeliveryCode);
+            this.pnlCodeContainer.Controls.Add(this.lblDeliveryCode);
+            this.pnlCodeContainer.Location = new System.Drawing.Point(16, 15);
+            this.pnlCodeContainer.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlCodeContainer.Name = "pnlCodeContainer";
+            this.pnlCodeContainer.Size = new System.Drawing.Size(1035, 489);
+            this.pnlCodeContainer.TabIndex = 0;
             // 
             // btnSend
             // 
@@ -109,19 +109,19 @@ namespace SpaceshipApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.pnlWizardContainer);
+            this.Controls.Add(this.pnlCodeContainer);
             this.Name = "frmCodeSender";
             this.Text = "Spaceship";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.pnlWizardContainer.ResumeLayout(false);
-            this.pnlWizardContainer.PerformLayout();
+            this.pnlCodeContainer.ResumeLayout(false);
+            this.pnlCodeContainer.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Panel pnlWizardContainer;
+        private System.Windows.Forms.Panel pnlCodeContainer;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Label lblSpaceshipCode;
         private System.Windows.Forms.TextBox txtSpaceshipCode;
