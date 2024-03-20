@@ -1,5 +1,5 @@
 ﻿
-namespace PlanetApp
+namespace PlanetaryAccessControlSystem
 {
     partial class Form1
     {

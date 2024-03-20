@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SpaceshipApp
+namespace PlanetaryAccessControlSystem
 {
-    public partial class frmCodeSender : Form
+    public partial class Form1 : Form
     {
-        public frmCodeSender()
+        public Form1()
         {
             InitializeComponent();
         }
