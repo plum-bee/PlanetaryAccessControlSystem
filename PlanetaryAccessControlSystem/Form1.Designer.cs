@@ -1,7 +1,7 @@
 ﻿
 namespace PlanetaryAccessControlSystem
 {
-    partial class frmMain
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,10 @@ namespace PlanetaryAccessControlSystem
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // frmMain
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "frmMain";
-            this.Text = "Main Page";
-            this.ResumeLayout(false);
-
+            this.Text = "Form1";
         }
 
         #endregion
