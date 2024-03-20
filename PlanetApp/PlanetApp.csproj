@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A507F3A5-9FD8-455A-8D66-25A92D98DAC0}</ProjectGuid>
+    <ProjectGuid>{A10EDF6E-AFD9-4679-A026-BACAE7159BCC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SpaceshipApp</RootNamespace>
-    <AssemblyName>SpaceshipApp</AssemblyName>
+    <RootNamespace>PlanetApp</RootNamespace>
+    <AssemblyName>PlanetApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,26 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmEncryptedSender.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEncryptedSender.Designer.cs">
-      <DependentUpon>frmEncryptedSender.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmCodeSender.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCodeSender.Designer.cs">
-      <DependentUpon>frmCodeSender.cs</DependentUpon>
+    <Compile Include="Form1.cs" />
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmCodeSender.resx">
-      <DependentUpon>frmCodeSender.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEncryptedSender.resx">
-      <DependentUpon>frmEncryptedSender.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
