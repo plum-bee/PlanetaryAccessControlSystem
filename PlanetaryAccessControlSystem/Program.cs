@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SpaceshipApp
+namespace PlanetaryAccessControlSystem
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace SpaceshipApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCodeSender());
+            Application.Run(new Form1());
         }
     }
 }
