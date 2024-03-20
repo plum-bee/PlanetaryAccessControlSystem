@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Spaceship")]
+[assembly: AssemblyTitle("SpaceshipApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Spaceship")]
+[assembly: AssemblyProduct("SpaceshipApp")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3afd81fd-0eea-49be-841c-a4140f1b1565")]
+[assembly: Guid("a507f3a5-9fd8-455a-8d66-25a92d98dac0")]
 
 // Version information for an assembly consists of the following four values:
 //

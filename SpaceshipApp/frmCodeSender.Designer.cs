@@ -76,9 +76,9 @@ namespace SpaceshipApp
             this.lblSpaceshipCode.AutoSize = true;
             this.lblSpaceshipCode.Location = new System.Drawing.Point(73, 160);
             this.lblSpaceshipCode.Name = "lblSpaceshipCode";
-            this.lblSpaceshipCode.Size = new System.Drawing.Size(111, 17);
+            this.lblSpaceshipCode.Size = new System.Drawing.Size(118, 17);
             this.lblSpaceshipCode.TabIndex = 2;
-            this.lblSpaceshipCode.Text = "Spaceship Code";
+            this.lblSpaceshipCode.Text = "Spaceship Codes";
             // 
             // txtSpaceshipCode
             // 

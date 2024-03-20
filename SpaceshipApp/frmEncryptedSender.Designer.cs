@@ -35,7 +35,7 @@ namespace SpaceshipApp
             this.btnSend = new System.Windows.Forms.Button();
             this.lblValidationCode = new System.Windows.Forms.Label();
             this.txtValidationCode = new System.Windows.Forms.TextBox();
-            this.txtDeliveryCode = new System.Windows.Forms.TextBox();
+            this.txtPubKeyPath = new System.Windows.Forms.TextBox();
             this.lblPubKeyPath = new System.Windows.Forms.Label();
             this.pnlEncryptedContainer.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +56,7 @@ namespace SpaceshipApp
             this.pnlEncryptedContainer.Controls.Add(this.btnSend);
             this.pnlEncryptedContainer.Controls.Add(this.lblValidationCode);
             this.pnlEncryptedContainer.Controls.Add(this.txtValidationCode);
-            this.pnlEncryptedContainer.Controls.Add(this.txtDeliveryCode);
+            this.pnlEncryptedContainer.Controls.Add(this.txtPubKeyPath);
             this.pnlEncryptedContainer.Controls.Add(this.lblPubKeyPath);
             this.pnlEncryptedContainer.Location = new System.Drawing.Point(16, 15);
             this.pnlEncryptedContainer.Margin = new System.Windows.Forms.Padding(4);
@@ -98,12 +98,12 @@ namespace SpaceshipApp
             this.txtValidationCode.Size = new System.Drawing.Size(454, 22);
             this.txtValidationCode.TabIndex = 3;
             // 
-            // txtDeliveryCode
+            // txtPubKeyPath
             // 
-            this.txtDeliveryCode.Location = new System.Drawing.Point(76, 85);
-            this.txtDeliveryCode.Name = "txtDeliveryCode";
-            this.txtDeliveryCode.Size = new System.Drawing.Size(454, 22);
-            this.txtDeliveryCode.TabIndex = 1;
+            this.txtPubKeyPath.Location = new System.Drawing.Point(76, 85);
+            this.txtPubKeyPath.Name = "txtPubKeyPath";
+            this.txtPubKeyPath.Size = new System.Drawing.Size(454, 22);
+            this.txtPubKeyPath.TabIndex = 1;
             // 
             // lblPubKeyPath
             // 
@@ -136,7 +136,7 @@ namespace SpaceshipApp
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Label lblValidationCode;
         private System.Windows.Forms.TextBox txtValidationCode;
-        private System.Windows.Forms.TextBox txtDeliveryCode;
+        private System.Windows.Forms.TextBox txtPubKeyPath;
         private System.Windows.Forms.Label lblPubKeyPath;
         private System.Windows.Forms.Button btnSelectPubKeyFile;
     }
