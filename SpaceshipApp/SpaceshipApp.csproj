@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A507F3A5-9FD8-455A-8D66-25A92D98DAC0}</ProjectGuid>
+    <ProjectGuid>{BD8F9D1E-29FE-4C9C-9385-66C3560D51D7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>SpaceshipApp</RootNamespace>
     <AssemblyName>SpaceshipApp</AssemblyName>
@@ -46,16 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmMainSpaceship.cs">
+    <Compile Include="frmCodeSender.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMainSpaceship.Designer.cs">
-      <DependentUpon>frmMainSpaceship.cs</DependentUpon>
+    <Compile Include="frmCodeSender.Designer.cs">
+      <DependentUpon>frmCodeSender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEncryptedSender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEncryptedSender.Designer.cs">
+      <DependentUpon>frmEncryptedSender.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmMainSpaceship.resx">
-      <DependentUpon>frmMainSpaceship.cs</DependentUpon>
+    <EmbeddedResource Include="frmCodeSender.resx">
+      <DependentUpon>frmCodeSender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEncryptedSender.resx">
+      <DependentUpon>frmEncryptedSender.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,6 +87,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLibrary\DataAccessLibrary.csproj">
+      <Project>{3b0cddc0-8477-4a85-bd65-f62f71f04f8a}</Project>
+      <Name>DataAccessLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
