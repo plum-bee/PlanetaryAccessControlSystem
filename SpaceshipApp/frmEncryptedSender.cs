@@ -30,23 +30,38 @@ namespace SpaceshipApp
         {
             try
             {
-                DataSet dataSet = _databaseConnection.RetrieveAllDataFromTable("PlanetKeys");
+                string planetName = txtPlanet.Text.Trim(); 
 
-                if (dataSet.Tables.Count > 0 && dataSet.Tables[0].Rows.Count > 0)
+                DataSet planetsDataSet = _databaseConnection.RetrieveDataUsingQuery($"SELECT idPlanet FROM Planets WHERE DescPlanet = '{planetName}'");
+
+                if (planetsDataSet.Tables.Count > 0 && planetsDataSet.Tables[0].Rows.Count > 0)
                 {
-                    string xmlPublicKey = dataSet.Tables[0].Rows[0]["XMLKey"].ToString();
+                    int idPlanet = Convert.ToInt32(planetsDataSet.Tables[0].Rows[0]["idPlanet"]);
 
-                    SaveFileDialog saveFileDialog = new SaveFileDialog();
-                    saveFileDialog.Filter = "XML files (*.xml)|*.xml";
-                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    DataSet keysDataSet = _databaseConnection.RetrieveDataUsingQuery($"SELECT * FROM PlanetKeys WHERE idPlanet = {idPlanet}");
+
+                    if (keysDataSet.Tables.Count > 0 && keysDataSet.Tables[0].Rows.Count > 0)
                     {
-                        File.WriteAllText(saveFileDialog.FileName, xmlPublicKey);
-                        MessageBox.Show("XML public key downloaded successfully.");
+                        string xmlPublicKey = keysDataSet.Tables[0].Rows[0]["XMLKey"].ToString(); 
+
+                        SaveFileDialog saveFileDialog = new SaveFileDialog();
+                        saveFileDialog.Filter = "XML files (*.xml)|*.xml";
+                        saveFileDialog.FileName = $"{planetName}_public_key.xml"; 
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            File.WriteAllText(saveFileDialog.FileName, xmlPublicKey);
+                            MessageBox.Show("XML public key downloaded successfully.");
+                            pgbDownload.Value = 100;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"No XML public key found for the planet '{planetName}'.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No XML public key found in the database.");
+                    MessageBox.Show($"No planet found with the name '{planetName}'.");
                 }
             }
             catch (Exception ex)

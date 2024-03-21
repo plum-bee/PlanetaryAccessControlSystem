@@ -31,14 +31,14 @@ namespace SpaceshipApp
         {
             this.btnNext = new System.Windows.Forms.Button();
             this.pnlEncryptedContainer = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.pgbDownload = new System.Windows.Forms.ProgressBar();
             this.button1 = new System.Windows.Forms.Button();
             this.btnDownloadKeyFile = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
             this.lblValidationCode = new System.Windows.Forms.Label();
             this.txtValidationCode = new System.Windows.Forms.TextBox();
             this.lblPubKeyPath = new System.Windows.Forms.Label();
+            this.txtPlanet = new System.Windows.Forms.TextBox();
             this.pnlEncryptedContainer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,8 +54,8 @@ namespace SpaceshipApp
             // 
             // pnlEncryptedContainer
             // 
-            this.pnlEncryptedContainer.Controls.Add(this.richTextBox1);
-            this.pnlEncryptedContainer.Controls.Add(this.progressBar1);
+            this.pnlEncryptedContainer.Controls.Add(this.txtPlanet);
+            this.pnlEncryptedContainer.Controls.Add(this.pgbDownload);
             this.pnlEncryptedContainer.Controls.Add(this.button1);
             this.pnlEncryptedContainer.Controls.Add(this.btnDownloadKeyFile);
             this.pnlEncryptedContainer.Controls.Add(this.btnSend);
@@ -68,20 +68,12 @@ namespace SpaceshipApp
             this.pnlEncryptedContainer.Size = new System.Drawing.Size(1164, 611);
             this.pnlEncryptedContainer.TabIndex = 2;
             // 
-            // richTextBox1
+            // pgbDownload
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(86, 161);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(510, 96);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(86, 105);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(510, 23);
-            this.progressBar1.TabIndex = 7;
+            this.pgbDownload.Location = new System.Drawing.Point(86, 178);
+            this.pgbDownload.Name = "pgbDownload";
+            this.pgbDownload.Size = new System.Drawing.Size(510, 23);
+            this.pgbDownload.TabIndex = 7;
             // 
             // button1
             // 
@@ -95,12 +87,12 @@ namespace SpaceshipApp
             // 
             // btnDownloadKeyFile
             // 
-            this.btnDownloadKeyFile.Location = new System.Drawing.Point(646, 99);
+            this.btnDownloadKeyFile.Location = new System.Drawing.Point(621, 169);
             this.btnDownloadKeyFile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDownloadKeyFile.Name = "btnDownloadKeyFile";
             this.btnDownloadKeyFile.Size = new System.Drawing.Size(198, 37);
-            this.btnDownloadKeyFile.TabIndex = 5;
-            this.btnDownloadKeyFile.Text = "Download Key";
+            this.btnDownloadKeyFile.TabIndex = 2;
+            this.btnDownloadKeyFile.Text = "Download Planet Key";
             this.btnDownloadKeyFile.UseVisualStyleBackColor = true;
             this.btnDownloadKeyFile.Click += new System.EventHandler(this.btnDownloadKeyFile_Click);
             // 
@@ -134,11 +126,18 @@ namespace SpaceshipApp
             // lblPubKeyPath
             // 
             this.lblPubKeyPath.AutoSize = true;
-            this.lblPubKeyPath.Location = new System.Drawing.Point(82, 68);
+            this.lblPubKeyPath.Location = new System.Drawing.Point(82, 91);
             this.lblPubKeyPath.Name = "lblPubKeyPath";
-            this.lblPubKeyPath.Size = new System.Drawing.Size(81, 20);
+            this.lblPubKeyPath.Size = new System.Drawing.Size(159, 20);
             this.lblPubKeyPath.TabIndex = 0;
-            this.lblPubKeyPath.Text = "Public Key";
+            this.lblPubKeyPath.Text = "Planet Delivery Name";
+            // 
+            // txtPlanet
+            // 
+            this.txtPlanet.Location = new System.Drawing.Point(86, 133);
+            this.txtPlanet.Name = "txtPlanet";
+            this.txtPlanet.Size = new System.Drawing.Size(510, 26);
+            this.txtPlanet.TabIndex = 1;
             // 
             // frmEncryptedSender
             // 
@@ -165,8 +164,8 @@ namespace SpaceshipApp
         private System.Windows.Forms.TextBox txtValidationCode;
         private System.Windows.Forms.Label lblPubKeyPath;
         private System.Windows.Forms.Button btnDownloadKeyFile;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar pgbDownload;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtPlanet;
     }
 }
