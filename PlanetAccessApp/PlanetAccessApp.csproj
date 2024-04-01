@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A10EDF6E-AFD9-4679-A026-BACAE7159BCC}</ProjectGuid>
+    <ProjectGuid>{7B7D7256-76BE-4501-BBA0-33CA58CEB77F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PlanetApp</RootNamespace>
-    <AssemblyName>PlanetApp</AssemblyName>
+    <RootNamespace>PlanetAccessApp</RootNamespace>
+    <AssemblyName>PlanetAccessApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
