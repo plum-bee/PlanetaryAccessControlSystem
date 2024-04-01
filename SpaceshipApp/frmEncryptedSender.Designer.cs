@@ -31,18 +31,22 @@ namespace SpaceshipApp
         {
             this.btnNext = new System.Windows.Forms.Button();
             this.pnlEncryptedContainer = new System.Windows.Forms.Panel();
+            this.pgbEncryption = new System.Windows.Forms.ProgressBar();
+            this.btnEncryptCode = new System.Windows.Forms.Button();
+            this.btnValidationCode = new System.Windows.Forms.Button();
+            this.pgbDownloadCode = new System.Windows.Forms.ProgressBar();
             this.txtPlanet = new System.Windows.Forms.TextBox();
-            this.pgbDownload = new System.Windows.Forms.ProgressBar();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pgbDownloadKey = new System.Windows.Forms.ProgressBar();
+            this.btnSelectCode = new System.Windows.Forms.Button();
             this.btnDownloadKeyFile = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
             this.lblValidationCode = new System.Windows.Forms.Label();
             this.txtValidationCode = new System.Windows.Forms.TextBox();
             this.lblPubKeyPath = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.txtPlanetKey = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSelectKey = new System.Windows.Forms.Button();
+            this.txtEncryptedCode = new System.Windows.Forms.TextBox();
             this.pnlEncryptedContainer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,13 +62,17 @@ namespace SpaceshipApp
             // 
             // pnlEncryptedContainer
             // 
-            this.pnlEncryptedContainer.Controls.Add(this.progressBar2);
-            this.pnlEncryptedContainer.Controls.Add(this.button3);
-            this.pnlEncryptedContainer.Controls.Add(this.button2);
-            this.pnlEncryptedContainer.Controls.Add(this.progressBar1);
+            this.pnlEncryptedContainer.Controls.Add(this.txtEncryptedCode);
+            this.pnlEncryptedContainer.Controls.Add(this.btnSelectKey);
+            this.pnlEncryptedContainer.Controls.Add(this.label1);
+            this.pnlEncryptedContainer.Controls.Add(this.txtPlanetKey);
+            this.pnlEncryptedContainer.Controls.Add(this.pgbEncryption);
+            this.pnlEncryptedContainer.Controls.Add(this.btnEncryptCode);
+            this.pnlEncryptedContainer.Controls.Add(this.btnValidationCode);
+            this.pnlEncryptedContainer.Controls.Add(this.pgbDownloadCode);
             this.pnlEncryptedContainer.Controls.Add(this.txtPlanet);
-            this.pnlEncryptedContainer.Controls.Add(this.pgbDownload);
-            this.pnlEncryptedContainer.Controls.Add(this.button1);
+            this.pnlEncryptedContainer.Controls.Add(this.pgbDownloadKey);
+            this.pnlEncryptedContainer.Controls.Add(this.btnSelectCode);
             this.pnlEncryptedContainer.Controls.Add(this.btnDownloadKeyFile);
             this.pnlEncryptedContainer.Controls.Add(this.btnSend);
             this.pnlEncryptedContainer.Controls.Add(this.lblValidationCode);
@@ -76,6 +84,42 @@ namespace SpaceshipApp
             this.pnlEncryptedContainer.Size = new System.Drawing.Size(1164, 611);
             this.pnlEncryptedContainer.TabIndex = 2;
             // 
+            // pgbEncryption
+            // 
+            this.pgbEncryption.Location = new System.Drawing.Point(86, 463);
+            this.pgbEncryption.Name = "pgbEncryption";
+            this.pgbEncryption.Size = new System.Drawing.Size(510, 23);
+            this.pgbEncryption.TabIndex = 11;
+            // 
+            // btnEncryptCode
+            // 
+            this.btnEncryptCode.Location = new System.Drawing.Point(621, 463);
+            this.btnEncryptCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEncryptCode.Name = "btnEncryptCode";
+            this.btnEncryptCode.Size = new System.Drawing.Size(221, 37);
+            this.btnEncryptCode.TabIndex = 10;
+            this.btnEncryptCode.Text = "Encrypt Validation Code";
+            this.btnEncryptCode.UseVisualStyleBackColor = true;
+            this.btnEncryptCode.Click += new System.EventHandler(this.btnEncryptCode_Click);
+            // 
+            // btnValidationCode
+            // 
+            this.btnValidationCode.Location = new System.Drawing.Point(621, 228);
+            this.btnValidationCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnValidationCode.Name = "btnValidationCode";
+            this.btnValidationCode.Size = new System.Drawing.Size(221, 37);
+            this.btnValidationCode.TabIndex = 9;
+            this.btnValidationCode.Text = "Download Validation Code";
+            this.btnValidationCode.UseVisualStyleBackColor = true;
+            this.btnValidationCode.Click += new System.EventHandler(this.btnValidationCode_Click);
+            // 
+            // pgbDownloadCode
+            // 
+            this.pgbDownloadCode.Location = new System.Drawing.Point(86, 228);
+            this.pgbDownloadCode.Name = "pgbDownloadCode";
+            this.pgbDownloadCode.Size = new System.Drawing.Size(510, 23);
+            this.pgbDownloadCode.TabIndex = 8;
+            // 
             // txtPlanet
             // 
             this.txtPlanet.Location = new System.Drawing.Point(86, 133);
@@ -83,22 +127,23 @@ namespace SpaceshipApp
             this.txtPlanet.Size = new System.Drawing.Size(510, 26);
             this.txtPlanet.TabIndex = 1;
             // 
-            // pgbDownload
+            // pgbDownloadKey
             // 
-            this.pgbDownload.Location = new System.Drawing.Point(86, 178);
-            this.pgbDownload.Name = "pgbDownload";
-            this.pgbDownload.Size = new System.Drawing.Size(510, 23);
-            this.pgbDownload.TabIndex = 7;
+            this.pgbDownloadKey.Location = new System.Drawing.Point(86, 178);
+            this.pgbDownloadKey.Name = "pgbDownloadKey";
+            this.pgbDownloadKey.Size = new System.Drawing.Size(510, 23);
+            this.pgbDownloadKey.TabIndex = 7;
             // 
-            // button1
+            // btnSelectCode
             // 
-            this.button1.Location = new System.Drawing.Point(621, 333);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 29);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSelectCode.Location = new System.Drawing.Point(621, 324);
+            this.btnSelectCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSelectCode.Name = "btnSelectCode";
+            this.btnSelectCode.Size = new System.Drawing.Size(76, 29);
+            this.btnSelectCode.TabIndex = 6;
+            this.btnSelectCode.Text = "...";
+            this.btnSelectCode.UseVisualStyleBackColor = true;
+            this.btnSelectCode.Click += new System.EventHandler(this.btnSelectCode_Click);
             // 
             // btnDownloadKeyFile
             // 
@@ -113,7 +158,7 @@ namespace SpaceshipApp
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(86, 482);
+            this.btnSend.Location = new System.Drawing.Point(86, 518);
             this.btnSend.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(84, 29);
@@ -132,7 +177,7 @@ namespace SpaceshipApp
             // 
             // txtValidationCode
             // 
-            this.txtValidationCode.Location = new System.Drawing.Point(86, 333);
+            this.txtValidationCode.Location = new System.Drawing.Point(86, 327);
             this.txtValidationCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtValidationCode.Name = "txtValidationCode";
             this.txtValidationCode.Size = new System.Drawing.Size(510, 26);
@@ -147,39 +192,41 @@ namespace SpaceshipApp
             this.lblPubKeyPath.TabIndex = 0;
             this.lblPubKeyPath.Text = "Planet Delivery Name";
             // 
-            // progressBar1
+            // txtPlanetKey
             // 
-            this.progressBar1.Location = new System.Drawing.Point(86, 228);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(510, 23);
-            this.progressBar1.TabIndex = 8;
+            this.txtPlanetKey.Location = new System.Drawing.Point(86, 408);
+            this.txtPlanetKey.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPlanetKey.Name = "txtPlanetKey";
+            this.txtPlanetKey.Size = new System.Drawing.Size(510, 26);
+            this.txtPlanetKey.TabIndex = 12;
             // 
-            // button2
+            // label1
             // 
-            this.button2.Location = new System.Drawing.Point(621, 228);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(221, 37);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Download Validation Code";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(82, 373);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 20);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Planet Key";
             // 
-            // button3
+            // btnSelectKey
             // 
-            this.button3.Location = new System.Drawing.Point(621, 383);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(221, 37);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Encrypt Validation Code";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSelectKey.Location = new System.Drawing.Point(621, 408);
+            this.btnSelectKey.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSelectKey.Name = "btnSelectKey";
+            this.btnSelectKey.Size = new System.Drawing.Size(76, 29);
+            this.btnSelectKey.TabIndex = 14;
+            this.btnSelectKey.Text = "...";
+            this.btnSelectKey.UseVisualStyleBackColor = true;
+            this.btnSelectKey.Click += new System.EventHandler(this.btnSelectKey_Click);
             // 
-            // progressBar2
+            // txtEncryptedCode
             // 
-            this.progressBar2.Location = new System.Drawing.Point(86, 383);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(510, 23);
-            this.progressBar2.TabIndex = 11;
+            this.txtEncryptedCode.Location = new System.Drawing.Point(720, 411);
+            this.txtEncryptedCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEncryptedCode.Name = "txtEncryptedCode";
+            this.txtEncryptedCode.Size = new System.Drawing.Size(354, 26);
+            this.txtEncryptedCode.TabIndex = 15;
             // 
             // frmEncryptedSender
             // 
@@ -206,12 +253,16 @@ namespace SpaceshipApp
         private System.Windows.Forms.TextBox txtValidationCode;
         private System.Windows.Forms.Label lblPubKeyPath;
         private System.Windows.Forms.Button btnDownloadKeyFile;
-        private System.Windows.Forms.ProgressBar pgbDownload;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ProgressBar pgbDownloadKey;
+        private System.Windows.Forms.Button btnSelectCode;
         private System.Windows.Forms.TextBox txtPlanet;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.ProgressBar progressBar2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnValidationCode;
+        private System.Windows.Forms.ProgressBar pgbDownloadCode;
+        private System.Windows.Forms.ProgressBar pgbEncryption;
+        private System.Windows.Forms.Button btnEncryptCode;
+        private System.Windows.Forms.Button btnSelectKey;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPlanetKey;
+        private System.Windows.Forms.TextBox txtEncryptedCode;
     }
 }
