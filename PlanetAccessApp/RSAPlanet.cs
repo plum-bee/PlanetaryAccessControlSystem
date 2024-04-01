@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataAccessLibrary;
 
 namespace PlanetAccessApp
 {
@@ -19,59 +13,84 @@ namespace PlanetAccessApp
             InitializeComponent();
         }
 
-
         private string _keyName;
-        private string _xmlPath;
+        private string _planetName;
 
         private void btn_generate_Click(object sender, EventArgs e)
         {
-            _keyName = txtKeyContainer.Text;
+            _keyName = txtKeyContainer.Text.Trim();
+            _planetName = txtPlanet.Text.Trim();
 
-            if (!string.IsNullOrWhiteSpace(_keyName) && !string.IsNullOrWhiteSpace(_xmlPath))
+            if (string.IsNullOrWhiteSpace(_keyName) || string.IsNullOrWhiteSpace(_planetName))
             {
-                GenerateAndSaveKeys(_keyName, _xmlPath);
+                MessageBox.Show("Key Name and Planet Name must not be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                GenerateAndSaveKeys(_keyName, _planetName);
+                MessageBox.Show("Keys were successfully generated and saved.",
+                                "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public void GenerateAndSaveKeys(string keyName, string folderPath)
+        public void GenerateAndSaveKeys(string keyName, string planetName)
         {
-            CspParameters csp = new CspParameters
+            try
             {
-                KeyContainerName = keyName
-            };
-
-            using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(csp))
-            {
-                rsa.PersistKeyInCsp = true;
-
-                string publicKeyPath = Path.Combine(folderPath, "PublicKey.xml");
-                string publicKey = rsa.ToXmlString(false);
-
-                File.WriteAllText(publicKeyPath, publicKey);
-
-                MessageBox.Show($"Keys were successfully generated and saved.\nPublic key path: {publicKeyPath}",
-                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void btn_routeXML_Click(object sender, EventArgs e)
-        {
-            _xmlPath = ChooseFolderPath();
-            txtRouteXML.Text = _xmlPath;
-        }
-
-        private static string ChooseFolderPath()
-        {
-            using (var fbd = new FolderBrowserDialog())
-            {
-                DialogResult result = fbd.ShowDialog();
-
-                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                CspParameters csp = new CspParameters
                 {
-                    return fbd.SelectedPath;
-                }
+                    KeyContainerName = keyName
+                };
 
-                return null;
+                using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(csp))
+                {
+                    rsa.PersistKeyInCsp = true;
+
+                    string publicKey = rsa.ToXmlString(false);
+                    SaveKeyToDatabase(planetName, publicKey);
+                }
+            }
+            catch (CryptographicException ce)
+            {
+                MessageBox.Show($"Cryptographic error occurred: {ce.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void SaveKeyToDatabase(string planetName, string publicKey)
+        {
+            DatabaseConnection dbConnection = new DatabaseConnection();
+
+            try
+            {
+                string queryToGetPlanetId = $"SELECT idPlanet FROM Planets WHERE DescPlanet = '{planetName}'";
+                DataSet planetData = dbConnection.RetrieveDataUsingQuery(queryToGetPlanetId);
+
+                if (planetData != null && planetData.Tables[0].Rows.Count > 0)
+                {
+                    string planetId = planetData.Tables[0].Rows[0]["idPlanet"].ToString();
+
+                    string insertQuery = $"INSERT INTO PlanetKeys (idPlanet, XMLKey) VALUES ('{planetId}', '{publicKey}')";
+                    dbConnection.ExecuteSqlNonQuery(insertQuery);
+                }
+                else
+                {
+                    MessageBox.Show("Planet not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to save key to database: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
