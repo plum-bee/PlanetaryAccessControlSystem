@@ -472,3 +472,4 @@ thread-dumps/
 # Exclude all cache files
 *.[Cc]ache
 
+.vs/PlanetaryAccessControlSystem/v16/.suo
