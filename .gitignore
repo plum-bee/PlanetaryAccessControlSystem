@@ -473,3 +473,5 @@ thread-dumps/
 *.[Cc]ache
 
 .vs/PlanetaryAccessControlSystem/v16/.suo
+PlanetaryAccessControlSystem/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+*.cache
