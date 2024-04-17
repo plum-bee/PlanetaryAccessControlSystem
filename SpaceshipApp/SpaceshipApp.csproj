@@ -93,6 +93,10 @@
       <Project>{3b0cddc0-8477-4a85-bd65-f62f71f04f8a}</Project>
       <Name>DataAccessLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TCPConnection\TCPConnection.csproj">
+      <Project>{46e891eb-e092-448b-9ab4-064031336a86}</Project>
+      <Name>TCPConnection</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

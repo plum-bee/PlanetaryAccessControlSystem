@@ -16,7 +16,7 @@ namespace PlanetAccessApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RSAPlanet());
+            Application.Run(new ServerListener());
         }
     }
 }

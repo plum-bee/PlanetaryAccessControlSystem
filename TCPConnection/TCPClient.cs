@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TCPConnection
 {
-    class TCPCLient
+    public class TCPCLient
     {
         private TcpClient _client;
         private NetworkStream _stream;
@@ -36,6 +36,11 @@ namespace TCPConnection
         {
             get => _serverPort;
             set => _serverPort = value;
+        }
+
+        public bool IsConnected 
+        {
+            get { return _client != null && _client.Connected; }
         }
 
         public TCPCLient(string ipAddress, int serverPort)
