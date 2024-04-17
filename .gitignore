@@ -475,3 +475,5 @@ thread-dumps/
 .vs/PlanetaryAccessControlSystem/v16/.suo
 PlanetaryAccessControlSystem/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 *.cache
+.vs/PlanetaryAccessControlSystem/v16/.suo
+/CustomEvents/obj/Debug

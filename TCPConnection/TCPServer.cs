@@ -11,40 +11,39 @@ namespace TCPConnection
 {
     public class TCPServer
     {
+        private readonly TcpListener _listener;
+        private bool _isConnected;
+        public event EventHandler ServerResponse;
+
         public TCPServer(string ip, int port)
         {
-            this.port = port;
-            ipAddress = IPAddress.Parse(ip);
-            listener = new TcpListener(ipAddress, port);
+            _listener = new TcpListener(IPAddress.Parse(ip), port);
         }
 
         public class MessageEventArgs : EventArgs
         {
-            public string message;
-        }
-
-        private readonly TcpListener listener;
-        private readonly IPAddress ipAddress;
-        private readonly int port;
-        private bool isConnected;
-        public event EventHandler ServerResponse;
+            public string Message { get; set; }
+            public byte[] Bytes { get; set; }
+        }   
 
         public void StartServer()
         {
-            listener.Start();
-            isConnected = true;
+            _listener.Start();
+            _isConnected = true;
+
             Thread listenerThread = new Thread(HandleIncomingConnections);
             listenerThread.Start();
+
             this.OnServerAnswer("Server started.");
         }
 
         private void HandleIncomingConnections()
         {
-            while (isConnected)
+            while (_isConnected)
             {
-                if (listener.Pending())
+                if (_listener.Pending())
                 {
-                    TcpClient client = listener.AcceptTcpClient();
+                    TcpClient client = _listener.AcceptTcpClient();
                     NetworkStream ns = client.GetStream();
 
                     Thread clientThread = new Thread(() => HandleClient(client, ns));
@@ -62,6 +61,7 @@ namespace TCPConnection
                 if (bytesRead > 0)
                 {
                     string receivedMessage = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+
                     this.OnServerAnswer($"Received: {receivedMessage}");
                 }
             }
@@ -74,22 +74,27 @@ namespace TCPConnection
         {
             byte[] messageBuffer = Encoding.ASCII.GetBytes(message);
             ns.Write(messageBuffer, 0, messageBuffer.Length);
+
             this.OnServerAnswer("Message sent to the client.");
         }
 
         public void StopServer()
         {
-            isConnected = false;
-            listener.Stop();
+            _isConnected = false;
+            _listener.Stop();
+
             this.OnServerAnswer("Server stopped.");
         }
 
-        protected virtual void OnServerAnswer(string message)
+        protected virtual void OnServerAnswer(string message, byte[] bytes = null)
         {
             if (ServerResponse != null)
             {
-                MessageEventArgs e = new MessageEventArgs();
-                e.message = message;
+                MessageEventArgs e = new MessageEventArgs
+                {
+                    Message = message,
+                    Bytes = bytes
+                };
 
                 ServerResponse(this, e);
             }
