@@ -7,30 +7,32 @@ namespace PlanetAccessApp
     public partial class ServerListener : Form
     {
         private TCPServer _server;
-        int port = 0;
+        int port = 6688;
 
         public ServerListener()
         {
             InitializeComponent();
             // Initialize the server with IP and port
+            _server = new TCPServer("127.0.0.1", port);
+            this._server.ServerResponse += new System.EventHandler(OnMessageReceived);
         }
 
         private void btn_connect_Click(object sender, EventArgs e)
         {
             port = int.Parse(txb_port.Text);
-            _server = new TCPServer("127.0.0.1", port);
+            
             _server.StartServer();
             lbx_Missatges.Items.Add("Server Started Correctly on " + txb_port.Text);
         }
 
-        private void Server_ServerResponse(object sender, TCPServer.MessageEventArgs e)
+      
+        public void OnMessageReceived(object sender, System.EventArgs e)
         {
-            if (InvokeRequired)
+            string msgContent = ((TCPServer.MessageEventArgs)e).Message;
+            this.Invoke((MethodInvoker)delegate
             {
-                Invoke(new Action(() => Server_ServerResponse(sender, e)));
-                return;
-            }
-            lbx_Missatges.Items.Add(e.Message);
+                lbx_Missatges.Items.Add(msgContent);
+            });
         }
     }
 }

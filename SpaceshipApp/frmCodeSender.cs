@@ -11,7 +11,7 @@ namespace SpaceshipApp
         public frmCodeSender()
         {
             InitializeComponent();
-            _client = new TCPCLient("127.0.0.1", 8000);
+            _client = new TCPCLient("127.0.0.1", 6688);
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -20,10 +20,8 @@ namespace SpaceshipApp
             {
                 _client.Connect();
                 MessageBox.Show("Connected to server!");
-            }
-            else
-            {
                 _client.SendMessage(txtDeliveryCode.Text);
+
             }
         }
 

@@ -16,10 +16,11 @@ namespace Testing
         public Form1()
         {
             InitializeComponent();
+            server = new TCPServer("127.0.0.1", 6688);
             this.server.ServerResponse += new System.EventHandler(OnMessageReceived);
         }
 
-        private TCPServer server = new TCPServer("127.0.0.1", 6688);
+        private TCPServer server;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -28,7 +29,7 @@ namespace Testing
 
         public void OnMessageReceived(object sender, System.EventArgs e)
         {
-            string msgContent = ((TCPServer.MessageEventArgs)e).message;
+            string msgContent = ((TCPServer.MessageEventArgs)e).Message;
             MessageBox.Show(msgContent);
         }
     }
