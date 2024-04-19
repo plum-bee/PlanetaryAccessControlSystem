@@ -31,12 +31,15 @@ namespace SpaceshipApp
         {
             this.btnNext = new System.Windows.Forms.Button();
             this.pnlCodeContainer = new System.Windows.Forms.Panel();
+            this.txt_filePath = new System.Windows.Forms.TextBox();
+            this.btn_selectFile = new System.Windows.Forms.Button();
+            this.lbx_console = new System.Windows.Forms.ListBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.lblSpaceshipCode = new System.Windows.Forms.Label();
             this.txtSpaceshipCode = new System.Windows.Forms.TextBox();
             this.txtDeliveryCode = new System.Windows.Forms.TextBox();
             this.lblDeliveryCode = new System.Windows.Forms.Label();
-            this.lbx_console = new System.Windows.Forms.ListBox();
+            this.btn_sendMessage = new System.Windows.Forms.Button();
             this.pnlCodeContainer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +55,9 @@ namespace SpaceshipApp
             // 
             // pnlCodeContainer
             // 
+            this.pnlCodeContainer.Controls.Add(this.btn_sendMessage);
+            this.pnlCodeContainer.Controls.Add(this.txt_filePath);
+            this.pnlCodeContainer.Controls.Add(this.btn_selectFile);
             this.pnlCodeContainer.Controls.Add(this.lbx_console);
             this.pnlCodeContainer.Controls.Add(this.btnSend);
             this.pnlCodeContainer.Controls.Add(this.lblSpaceshipCode);
@@ -64,14 +70,44 @@ namespace SpaceshipApp
             this.pnlCodeContainer.Size = new System.Drawing.Size(1164, 611);
             this.pnlCodeContainer.TabIndex = 0;
             // 
+            // txt_filePath
+            // 
+            this.txt_filePath.Location = new System.Drawing.Point(86, 335);
+            this.txt_filePath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_filePath.Name = "txt_filePath";
+            this.txt_filePath.Size = new System.Drawing.Size(409, 26);
+            this.txt_filePath.TabIndex = 7;
+            // 
+            // btn_selectFile
+            // 
+            this.btn_selectFile.Location = new System.Drawing.Point(512, 332);
+            this.btn_selectFile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_selectFile.Name = "btn_selectFile";
+            this.btn_selectFile.Size = new System.Drawing.Size(84, 29);
+            this.btn_selectFile.TabIndex = 6;
+            this.btn_selectFile.Text = "...";
+            this.btn_selectFile.UseVisualStyleBackColor = true;
+            this.btn_selectFile.Click += new System.EventHandler(this.btn_selectFile_Click);
+            // 
+            // lbx_console
+            // 
+            this.lbx_console.BackColor = System.Drawing.SystemColors.InfoText;
+            this.lbx_console.ForeColor = System.Drawing.SystemColors.Window;
+            this.lbx_console.FormattingEnabled = true;
+            this.lbx_console.ItemHeight = 20;
+            this.lbx_console.Location = new System.Drawing.Point(664, 106);
+            this.lbx_console.Name = "lbx_console";
+            this.lbx_console.Size = new System.Drawing.Size(446, 304);
+            this.lbx_console.TabIndex = 5;
+            // 
             // btnSend
             // 
             this.btnSend.Location = new System.Drawing.Point(86, 482);
             this.btnSend.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(84, 29);
+            this.btnSend.Size = new System.Drawing.Size(84, 57);
             this.btnSend.TabIndex = 4;
-            this.btnSend.Text = "SEND";
+            this.btnSend.Text = "SEND FILE";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
@@ -109,16 +145,16 @@ namespace SpaceshipApp
             this.lblDeliveryCode.TabIndex = 0;
             this.lblDeliveryCode.Text = "Delivery Code";
             // 
-            // lbx_console
+            // btn_sendMessage
             // 
-            this.lbx_console.BackColor = System.Drawing.SystemColors.InfoText;
-            this.lbx_console.ForeColor = System.Drawing.SystemColors.Window;
-            this.lbx_console.FormattingEnabled = true;
-            this.lbx_console.ItemHeight = 20;
-            this.lbx_console.Location = new System.Drawing.Point(664, 106);
-            this.lbx_console.Name = "lbx_console";
-            this.lbx_console.Size = new System.Drawing.Size(446, 304);
-            this.lbx_console.TabIndex = 5;
+            this.btn_sendMessage.Location = new System.Drawing.Point(236, 482);
+            this.btn_sendMessage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_sendMessage.Name = "btn_sendMessage";
+            this.btn_sendMessage.Size = new System.Drawing.Size(84, 29);
+            this.btn_sendMessage.TabIndex = 8;
+            this.btn_sendMessage.Text = "SEND";
+            this.btn_sendMessage.UseVisualStyleBackColor = true;
+            this.btn_sendMessage.Click += new System.EventHandler(this.btn_sendMessage_Click);
             // 
             // frmCodeSender
             // 
@@ -146,6 +182,9 @@ namespace SpaceshipApp
         private System.Windows.Forms.TextBox txtDeliveryCode;
         private System.Windows.Forms.Label lblDeliveryCode;
         private System.Windows.Forms.ListBox lbx_console;
+        private System.Windows.Forms.TextBox txt_filePath;
+        private System.Windows.Forms.Button btn_selectFile;
+        private System.Windows.Forms.Button btn_sendMessage;
     }
 }
 

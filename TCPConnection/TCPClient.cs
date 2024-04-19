@@ -5,6 +5,9 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.IO;
+using System.IO.Compression;
+
 
 namespace TCPConnection
 {
@@ -89,6 +92,15 @@ namespace TCPConnection
             }
         }
 
+        public void SendData(byte[] data)
+        {
+            if (_client.Connected)
+            {
+                _stream.Write(data, 0, data.Length);
+            }
+        }
+
+
         public void Disconnect()
         {
             if (_isConnected)
@@ -113,6 +125,25 @@ namespace TCPConnection
                 ClientResponse(this, e);
             }
         }
+
+        public byte[] ZipFile(string filePath)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                using (var archive = new ZipArchive(memoryStream, ZipArchiveMode.Create, true))
+                {
+                    var fileToSend = archive.CreateEntry(Path.GetFileName(filePath), CompressionLevel.Optimal);
+
+                    using (var entryStream = fileToSend.Open())
+                    using (var fileStream = File.OpenRead(filePath))
+                    {
+                        fileStream.CopyTo(entryStream);
+                    }
+                }
+                return memoryStream.ToArray();
+            }
+        }
+
     }
 }
 
