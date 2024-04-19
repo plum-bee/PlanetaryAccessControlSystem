@@ -84,6 +84,10 @@
       <Project>{7b7d7256-76be-4501-bba0-33ca58ceb77f}</Project>
       <Name>PlanetAccessApp</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SpaceshipApp\SpaceshipApp.csproj">
+      <Project>{bd8f9d1e-29fe-4c9c-9385-66c3560d51d7}</Project>
+      <Name>SpaceshipApp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TCPConnection\TCPConnection.csproj">
       <Project>{46e891eb-e092-448b-9ab4-064031336a86}</Project>
       <Name>TCPConnection</Name>
