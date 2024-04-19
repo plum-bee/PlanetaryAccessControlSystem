@@ -16,7 +16,7 @@ namespace SpaceshipApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEncryptedSender());
+            Application.Run(new SplashScreen());
         }
     }
 }
