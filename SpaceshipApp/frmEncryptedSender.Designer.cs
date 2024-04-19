@@ -1,5 +1,4 @@
-﻿
-namespace SpaceshipApp
+﻿namespace SpaceshipApp
 {
     partial class frmEncryptedSender
     {
@@ -29,8 +28,11 @@ namespace SpaceshipApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNext = new System.Windows.Forms.Button();
             this.pnlEncryptedContainer = new System.Windows.Forms.Panel();
+            this.txtEncryptedCode = new System.Windows.Forms.TextBox();
+            this.btnSelectKey = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPlanetKey = new System.Windows.Forms.TextBox();
             this.pgbEncryption = new System.Windows.Forms.ProgressBar();
             this.btnEncryptCode = new System.Windows.Forms.Button();
             this.btnValidationCode = new System.Windows.Forms.Button();
@@ -43,22 +45,8 @@ namespace SpaceshipApp
             this.lblValidationCode = new System.Windows.Forms.Label();
             this.txtValidationCode = new System.Windows.Forms.TextBox();
             this.lblPubKeyPath = new System.Windows.Forms.Label();
-            this.txtPlanetKey = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSelectKey = new System.Windows.Forms.Button();
-            this.txtEncryptedCode = new System.Windows.Forms.TextBox();
             this.pnlEncryptedContainer.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnNext
-            // 
-            this.btnNext.Location = new System.Drawing.Point(1070, 639);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(112, 35);
-            this.btnNext.TabIndex = 3;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
             // 
             // pnlEncryptedContainer
             // 
@@ -78,25 +66,67 @@ namespace SpaceshipApp
             this.pnlEncryptedContainer.Controls.Add(this.lblValidationCode);
             this.pnlEncryptedContainer.Controls.Add(this.txtValidationCode);
             this.pnlEncryptedContainer.Controls.Add(this.lblPubKeyPath);
-            this.pnlEncryptedContainer.Location = new System.Drawing.Point(18, 19);
-            this.pnlEncryptedContainer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlEncryptedContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlEncryptedContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.pnlEncryptedContainer.Location = new System.Drawing.Point(0, 0);
+            this.pnlEncryptedContainer.Margin = new System.Windows.Forms.Padding(4);
             this.pnlEncryptedContainer.Name = "pnlEncryptedContainer";
-            this.pnlEncryptedContainer.Size = new System.Drawing.Size(1164, 611);
-            this.pnlEncryptedContainer.TabIndex = 2;
+            this.pnlEncryptedContainer.Size = new System.Drawing.Size(1541, 813);
+            this.pnlEncryptedContainer.TabIndex = 0;
+            // 
+            // txtEncryptedCode
+            // 
+            this.txtEncryptedCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEncryptedCode.Location = new System.Drawing.Point(65, 551);
+            this.txtEncryptedCode.Name = "txtEncryptedCode";
+            this.txtEncryptedCode.Size = new System.Drawing.Size(997, 30);
+            this.txtEncryptedCode.TabIndex = 15;
+            // 
+            // btnSelectKey
+            // 
+            this.btnSelectKey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelectKey.Location = new System.Drawing.Point(1081, 469);
+            this.btnSelectKey.Name = "btnSelectKey";
+            this.btnSelectKey.Size = new System.Drawing.Size(67, 30);
+            this.btnSelectKey.TabIndex = 14;
+            this.btnSelectKey.Text = "...";
+            this.btnSelectKey.UseVisualStyleBackColor = true;
+            this.btnSelectKey.Click += new System.EventHandler(this.btnSelectKey_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(62, 444);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 25);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Planet Key";
+            // 
+            // txtPlanetKey
+            // 
+            this.txtPlanetKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPlanetKey.Location = new System.Drawing.Point(65, 469);
+            this.txtPlanetKey.Name = "txtPlanetKey";
+            this.txtPlanetKey.Size = new System.Drawing.Size(997, 30);
+            this.txtPlanetKey.TabIndex = 12;
             // 
             // pgbEncryption
             // 
-            this.pgbEncryption.Location = new System.Drawing.Point(86, 463);
+            this.pgbEncryption.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pgbEncryption.Location = new System.Drawing.Point(65, 621);
             this.pgbEncryption.Name = "pgbEncryption";
-            this.pgbEncryption.Size = new System.Drawing.Size(510, 23);
+            this.pgbEncryption.Size = new System.Drawing.Size(996, 16);
             this.pgbEncryption.TabIndex = 11;
             // 
             // btnEncryptCode
             // 
-            this.btnEncryptCode.Location = new System.Drawing.Point(621, 463);
-            this.btnEncryptCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEncryptCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEncryptCode.Location = new System.Drawing.Point(1081, 621);
             this.btnEncryptCode.Name = "btnEncryptCode";
-            this.btnEncryptCode.Size = new System.Drawing.Size(221, 37);
+            this.btnEncryptCode.Size = new System.Drawing.Size(215, 36);
             this.btnEncryptCode.TabIndex = 10;
             this.btnEncryptCode.Text = "Encrypt Validation Code";
             this.btnEncryptCode.UseVisualStyleBackColor = true;
@@ -104,10 +134,10 @@ namespace SpaceshipApp
             // 
             // btnValidationCode
             // 
-            this.btnValidationCode.Location = new System.Drawing.Point(621, 228);
-            this.btnValidationCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnValidationCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnValidationCode.Location = new System.Drawing.Point(1082, 273);
             this.btnValidationCode.Name = "btnValidationCode";
-            this.btnValidationCode.Size = new System.Drawing.Size(221, 37);
+            this.btnValidationCode.Size = new System.Drawing.Size(215, 36);
             this.btnValidationCode.TabIndex = 9;
             this.btnValidationCode.Text = "Download Validation Code";
             this.btnValidationCode.UseVisualStyleBackColor = true;
@@ -115,31 +145,37 @@ namespace SpaceshipApp
             // 
             // pgbDownloadCode
             // 
-            this.pgbDownloadCode.Location = new System.Drawing.Point(86, 228);
+            this.pgbDownloadCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pgbDownloadCode.Location = new System.Drawing.Point(68, 273);
             this.pgbDownloadCode.Name = "pgbDownloadCode";
-            this.pgbDownloadCode.Size = new System.Drawing.Size(510, 23);
+            this.pgbDownloadCode.Size = new System.Drawing.Size(996, 16);
             this.pgbDownloadCode.TabIndex = 8;
             // 
             // txtPlanet
             // 
-            this.txtPlanet.Location = new System.Drawing.Point(86, 133);
+            this.txtPlanet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPlanet.Location = new System.Drawing.Point(65, 111);
             this.txtPlanet.Name = "txtPlanet";
-            this.txtPlanet.Size = new System.Drawing.Size(510, 26);
+            this.txtPlanet.Size = new System.Drawing.Size(997, 30);
             this.txtPlanet.TabIndex = 1;
             // 
             // pgbDownloadKey
             // 
-            this.pgbDownloadKey.Location = new System.Drawing.Point(86, 178);
+            this.pgbDownloadKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pgbDownloadKey.Location = new System.Drawing.Point(67, 207);
             this.pgbDownloadKey.Name = "pgbDownloadKey";
-            this.pgbDownloadKey.Size = new System.Drawing.Size(510, 23);
+            this.pgbDownloadKey.Size = new System.Drawing.Size(996, 16);
             this.pgbDownloadKey.TabIndex = 7;
             // 
             // btnSelectCode
             // 
-            this.btnSelectCode.Location = new System.Drawing.Point(621, 324);
-            this.btnSelectCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSelectCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelectCode.Location = new System.Drawing.Point(1082, 365);
             this.btnSelectCode.Name = "btnSelectCode";
-            this.btnSelectCode.Size = new System.Drawing.Size(76, 29);
+            this.btnSelectCode.Size = new System.Drawing.Size(67, 30);
             this.btnSelectCode.TabIndex = 6;
             this.btnSelectCode.Text = "...";
             this.btnSelectCode.UseVisualStyleBackColor = true;
@@ -147,10 +183,10 @@ namespace SpaceshipApp
             // 
             // btnDownloadKeyFile
             // 
-            this.btnDownloadKeyFile.Location = new System.Drawing.Point(621, 169);
-            this.btnDownloadKeyFile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDownloadKeyFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDownloadKeyFile.Location = new System.Drawing.Point(1082, 207);
             this.btnDownloadKeyFile.Name = "btnDownloadKeyFile";
-            this.btnDownloadKeyFile.Size = new System.Drawing.Size(221, 37);
+            this.btnDownloadKeyFile.Size = new System.Drawing.Size(215, 36);
             this.btnDownloadKeyFile.TabIndex = 2;
             this.btnDownloadKeyFile.Text = "Download Planet Key";
             this.btnDownloadKeyFile.UseVisualStyleBackColor = true;
@@ -158,10 +194,10 @@ namespace SpaceshipApp
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(86, 518);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSend.Location = new System.Drawing.Point(68, 760);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(84, 29);
+            this.btnSend.Size = new System.Drawing.Size(87, 41);
             this.btnSend.TabIndex = 4;
             this.btnSend.Text = "SEND";
             this.btnSend.UseVisualStyleBackColor = true;
@@ -169,75 +205,39 @@ namespace SpaceshipApp
             // lblValidationCode
             // 
             this.lblValidationCode.AutoSize = true;
-            this.lblValidationCode.Location = new System.Drawing.Point(82, 291);
+            this.lblValidationCode.Location = new System.Drawing.Point(63, 342);
             this.lblValidationCode.Name = "lblValidationCode";
-            this.lblValidationCode.Size = new System.Drawing.Size(121, 20);
+            this.lblValidationCode.Size = new System.Drawing.Size(151, 25);
             this.lblValidationCode.TabIndex = 2;
             this.lblValidationCode.Text = "Validation Code";
             // 
             // txtValidationCode
             // 
-            this.txtValidationCode.Location = new System.Drawing.Point(86, 327);
-            this.txtValidationCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtValidationCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtValidationCode.Location = new System.Drawing.Point(66, 368);
             this.txtValidationCode.Name = "txtValidationCode";
-            this.txtValidationCode.Size = new System.Drawing.Size(510, 26);
+            this.txtValidationCode.Size = new System.Drawing.Size(997, 30);
             this.txtValidationCode.TabIndex = 3;
             // 
             // lblPubKeyPath
             // 
             this.lblPubKeyPath.AutoSize = true;
-            this.lblPubKeyPath.Location = new System.Drawing.Point(82, 91);
+            this.lblPubKeyPath.Location = new System.Drawing.Point(63, 69);
             this.lblPubKeyPath.Name = "lblPubKeyPath";
-            this.lblPubKeyPath.Size = new System.Drawing.Size(159, 20);
+            this.lblPubKeyPath.Size = new System.Drawing.Size(199, 25);
             this.lblPubKeyPath.TabIndex = 0;
             this.lblPubKeyPath.Text = "Planet Delivery Name";
             // 
-            // txtPlanetKey
-            // 
-            this.txtPlanetKey.Location = new System.Drawing.Point(86, 408);
-            this.txtPlanetKey.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPlanetKey.Name = "txtPlanetKey";
-            this.txtPlanetKey.Size = new System.Drawing.Size(510, 26);
-            this.txtPlanetKey.TabIndex = 12;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(82, 373);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 20);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Planet Key";
-            // 
-            // btnSelectKey
-            // 
-            this.btnSelectKey.Location = new System.Drawing.Point(621, 408);
-            this.btnSelectKey.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSelectKey.Name = "btnSelectKey";
-            this.btnSelectKey.Size = new System.Drawing.Size(76, 29);
-            this.btnSelectKey.TabIndex = 14;
-            this.btnSelectKey.Text = "...";
-            this.btnSelectKey.UseVisualStyleBackColor = true;
-            this.btnSelectKey.Click += new System.EventHandler(this.btnSelectKey_Click);
-            // 
-            // txtEncryptedCode
-            // 
-            this.txtEncryptedCode.Location = new System.Drawing.Point(720, 411);
-            this.txtEncryptedCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtEncryptedCode.Name = "txtEncryptedCode";
-            this.txtEncryptedCode.Size = new System.Drawing.Size(354, 26);
-            this.txtEncryptedCode.TabIndex = 15;
-            // 
             // frmEncryptedSender
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
-            this.Controls.Add(this.btnNext);
+            this.ClientSize = new System.Drawing.Size(1541, 813);
             this.Controls.Add(this.pnlEncryptedContainer);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmEncryptedSender";
-            this.Text = "Spaceship";
+            this.Text = "Spaceship Secure Transmission";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlEncryptedContainer.ResumeLayout(false);
             this.pnlEncryptedContainer.PerformLayout();
             this.ResumeLayout(false);
@@ -245,8 +245,6 @@ namespace SpaceshipApp
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Panel pnlEncryptedContainer;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Label lblValidationCode;
