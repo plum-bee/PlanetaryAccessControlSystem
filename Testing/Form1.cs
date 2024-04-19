@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCPConnection;
-using PlanetAccessApp;
 
 namespace Testing
 {
@@ -25,8 +24,7 @@ namespace Testing
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string code = PlanetUtils.GenerateValidationCode();
-            MessageBox.Show(code);
+            server.StartServer();
         }
 
         public void OnMessageReceived(object sender, System.EventArgs e)
