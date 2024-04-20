@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\App\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -46,6 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmPlanet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanet.Designer.cs">
+      <DependentUpon>frmPlanet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecureCoreG6DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SecureCoreG6DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ServerListener.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +71,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmPlanet.resx">
+      <DependentUpon>frmPlanet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -84,6 +98,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SecureCoreG6DataSet.xsc">
+      <DependentUpon>SecureCoreG6DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SecureCoreG6DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SecureCoreG6DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SecureCoreG6DataSet.xss">
+      <DependentUpon>SecureCoreG6DataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

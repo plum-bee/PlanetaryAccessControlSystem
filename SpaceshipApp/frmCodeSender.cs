@@ -22,7 +22,7 @@ namespace SpaceshipApp
                 MessageBox.Show("Connected to server!");
                 byte[] zippedData = _client.ZipFile(txt_filePath.Text);
                 _client.SendData(zippedData);
-
+            
             }
         }
 
@@ -33,7 +33,6 @@ namespace SpaceshipApp
                 _client.Connect();
                 MessageBox.Show("Connected to server!");
                 _client.SendMessage(txtDeliveryCode.Text);
-
             }
         }
 
