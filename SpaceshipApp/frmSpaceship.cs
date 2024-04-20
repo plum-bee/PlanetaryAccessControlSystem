@@ -19,7 +19,7 @@ namespace SpaceshipApp
         public frmSpaceship()
         {
             InitializeComponent();
-            LoadPlanetList();
+            //LoadPlanetList();
         }
 
         private void LoadPlanetList()
