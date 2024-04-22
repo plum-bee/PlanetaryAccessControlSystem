@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace TCPConnection
 {
@@ -14,6 +15,16 @@ namespace TCPConnection
         private readonly TcpListener _listener;
         private bool _isConnected;
         public event EventHandler ServerResponse;
+        public event EventHandler<FileReceivedEventArgs> FileReceived;
+
+        public class FileReceivedEventArgs : EventArgs
+        {
+            public string FilePath { get; }
+            public FileReceivedEventArgs(string filePath)
+            {
+                FilePath = filePath;
+            }
+        }
 
         public TCPServer(string ip, int port)
         {
@@ -98,6 +109,62 @@ namespace TCPConnection
 
                 ServerResponse(this, e);
             }
+        }
+
+        private void ReceiveFiles(int port)
+        {
+            TcpListener listener = null;
+            try
+            {
+                listener = new TcpListener(IPAddress.Any, port);
+                listener.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return;
+            }
+            while (true)
+            {
+                if (listener.Pending())
+                {
+                    TcpClient client = null;
+                    NetworkStream netstream = null;
+                    try
+                    {
+                        client = listener.AcceptTcpClient();
+                        netstream = client.GetStream();
+                        string saveFolderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FilesTCP");
+                        if (!Directory.Exists(saveFolderPath))
+                            Directory.CreateDirectory(saveFolderPath);
+                        string saveFileName = Path.Combine(saveFolderPath, "PACS.zip"); // Nombre aleatorio para el archivo
+                        FileStream fileStream = new FileStream(saveFileName, FileMode.Create);
+                        byte[] buffer = new byte[1024];
+                        int bytesRead;
+                        while ((bytesRead = netstream.Read(buffer, 0, buffer.Length)) > 0)
+                        {
+                            fileStream.Write(buffer, 0, bytesRead);
+                        }
+                        fileStream.Close();
+                        netstream.Close();
+                        client.Close();
+                        OnFileReceived(saveFileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        netstream?.Close();
+                        client?.Close();
+                    }
+                }
+            }
+        }
+
+
+
+        protected virtual void OnFileReceived(string filePath)
+        {
+            FileReceived?.Invoke(this, new FileReceivedEventArgs(filePath));
         }
     }
 }
